@@ -14,7 +14,7 @@ class FaucetSensor:
         GPIO.setup(20, GPIO.OUT) #sets GPIO20 as OUTPUT
         GPIO.setup(21, GPIO.OUT) #sets GPIO21 as OUTPUT
 
-    def read_sensor_data():
+    def read_sensor_data(self):
         aboveSensor = GPIO.input(12) # membaca kondisi pin GPIO12 sensor tutup (Biner)
         belowSensor = GPIO.input(16) #membaca kondisi pin GPIO16 sensor buka (Biner)
         return SensorOutput(aboveSensor, belowSensor)
