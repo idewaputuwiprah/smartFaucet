@@ -10,15 +10,15 @@ class Faucet:
         GPIO.setup(21, GPIO.OUT) #==sets GPIO21 as OUTPUT H-Bridge
 
     def open_faucet(self):
-        GPIO.output(20, True) #==  mengirimkan biner 1 ke pin GPIO 20 (membuka keran)
-        GPIO.output(21, False) #== mengirim biner 0 ke pin GPIO 21 (membuka keran)
+        GPIO.output(20, 1) #==  mengirimkan biner 1 ke pin GPIO 20 (membuka keran)
+        GPIO.output(21, 0) #== mengirim biner 0 ke pin GPIO 21 (membuka keran)
 
     def close_faucet(self):
-        GPIO.output(20, False) #==  mengirimkan biner 1 ke pin GPIO 20 (menutup keran)
-        GPIO.output(21, True) #== mengirim biner 0 ke pin GPIO 21 (menutup keran)
+        GPIO.output(20, 0) #==  mengirimkan biner 1 ke pin GPIO 20 (menutup keran)
+        GPIO.output(21, 1) #== mengirim biner 0 ke pin GPIO 21 (menutup keran)
 
     def off_motor(self):
-        GPIO.output(20, True) #==  mengirimkan biner 1 ke pin GPIO20 (power motor off)
-        GPIO.output(21, True) #== mengirim biner 0 ke pin GPIO 21 (power motor off)
+        GPIO.output(20, 1) #==  mengirimkan biner 1 ke pin GPIO20 (power motor off)
+        GPIO.output(21, 1) #== mengirim biner 0 ke pin GPIO 21 (power motor off)
 
     
