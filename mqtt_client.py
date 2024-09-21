@@ -6,9 +6,23 @@ def on_connect(client, userdata, flags, rc):
     print("Connected with result code " + str(rc))
 
 def on_message(client, userdata, msg):
+    faucet = Faucet()
     state = FaucetState(int(msg.payload.decode()))
-    print(state.name)
-    # print(msg.topic + " " + str(msg.payload))  
+
+    print("set state: " + state.name)
+
+    if state == FaucetState.OPEN:
+        faucet.open_faucet()
+        return
+
+    if state == FaucetState.CLOSE:
+        faucet.close_faucet()
+        return
+    
+    if state == FaucetState.OFF:
+        faucet.off_motor()
+        return
+     
 
 
 def main():
