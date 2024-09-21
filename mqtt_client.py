@@ -6,7 +6,7 @@ def on_connect(client, userdata, flags, rc):
     print("Connected with result code " + str(rc))
 
 def on_message(client, userdata, msg):
-    state = FaucetState(msg.payload.recv(1024).decode())
+    state = FaucetState(int(msg.payload.decode()))
     print(state.name)
     # print(msg.topic + " " + str(msg.payload))  
 
